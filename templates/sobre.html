@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>{% block title %}Marina Morais{% endblock %}</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- Estilos personalizados -->
+<link href="{{ url_for('static', filename='css/estilo.css') }}" rel="stylesheet"/>
+<style>
+      /* Navbar personalizado */
+      .custom-navbar {
+        background-color: #1976d2; /* Azul Royal */
+      }
+      .custom-navbar .nav-link,
+      .custom-navbar .navbar-brand {
+        color: #fff;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+      .custom-navbar .nav-link:hover,
+      .custom-navbar .nav-link:focus {
+        color: #bbdefb; /* Azul claro no hover */
+      }
+
+      /* Rodapé */
+      .custom-footer {
+        background-color: #0d47a1; /* Azul escuro */
+        color: #fff !important;
+        font-weight: 500;
+      }
+      .custom-footer a {
+        color: #bbdefb;
+        transition: color 0.3s ease;
+      }
+      .custom-footer a:hover,
+      .custom-footer a:focus {
+        color: #e3f2fd;
+        text-decoration: underline;
+      }
+
+      /* Ajustes gerais */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e3f2fd; /* Azul claro suave */
+        color: #212529;
+      }
+    </style>
+</head>
+<body>
+<body><div>
+<style>
+  .gallery-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  </style>
+<section class="container my-5">
+<div class="text-center mb-5">
+  <a class="btn btn-outline-primary btn-lg mt-3" href="/">🌟 Pagina inicial </a>
+<a class="btn btn-outline-primary btn-lg mt-3" href="/contato">📅 contato</a>
+<a class="btn btn-outline-primary btn-lg mt-3" href="/aulas">📸 Aulas </a>
+<h2 class="text-primary fw-bold">🎥 Funcional na Prática</h2>
+<p class="lead text-dark mx-auto" style="max-width: 800px;">
+      O treinamento funcional trabalha movimentos naturais do corpo, promovendo saúde, força e equilíbrio.
+    </p>
+</div>
+<div class="row g-4 justify-content-center">
+    {% for i in range(1, 7) %}
+    <div class="col-sm-6 col-md-4 text-center">
+<video autoplay="" class="img-fluid rounded shadow-sm gallery-img" data-bs-target="#modalVideo{{ i }}" data-bs-toggle="modal" loop="" muted="" playsinline="" src="{{ url_for('static', filename='video/video' ~ i ~ '.mp4') }}" style="cursor:pointer; max-height: 240px;"></video>
+</div>
+<!-- Modal com o vídeo maior -->
+<div aria-hidden="true" class="modal fade" id="modalVideo{{ i }}" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal-content bg-dark">
+<div class="modal-body p-0">
+<video autoplay="" class="w-100" controls="" loop="" src="{{ url_for('static', filename='video' ~ i ~ '.mp4') }}"></video>
+</div>
+<button aria-label="Fechar" class="btn-close position-absolute top-0 end-0 m-3 bg-white rounded-circle" data-bs-dismiss="modal" type="button"></button>
+</div>
+</div>
+</div>
+    {% endfor %}
+  </div>
+</section>
+</div></body>
+</body>
+</html>

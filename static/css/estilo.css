@@ -1,0 +1,138 @@
+/* ===== Cores de fundo principais ===== */
+body.bg-light-blue {
+  background-color: #e3f2fd;
+}
+
+/* Navbar azul royal */
+.custom-navbar {
+  background-color: #1976d2;
+}
+
+/* Rodapé azul escuro */
+.custom-footer {
+  background-color: #0d47a1;
+}
+
+/* ===== Texto e fonte ===== */
+body, p, h1, h2, h3, h4, .lead {
+  color: #212529;
+}
+.navbar-brand, .nav-link {
+  font-weight: 500;
+}
+
+/* ===== Estilo do rodapé ===== */
+.custom-footer a:hover {
+  text-decoration: underline;
+  color: #bbdefb;
+}
+
+/* ===== Banner ===== */
+.hero-image {
+  position: relative;
+  height: 60vh;
+  background-image: url('/static/imagens/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-image .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-image .content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* ===== Texto animado neon ===== */
+.neon-text {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(70deg, #00e5ff, #00c853, #ffea00, #ff4081, #00e5ff);
+  background-size: 1000% 1000%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: neonMove 8s ease infinite;
+}
+
+@keyframes neonMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Texto arco-íris animado ===== */
+.rainbow-text {
+  background: linear-gradient(to right, #ff6ec4, #7873f5, #42e695, #f9f871, #f093fb, #ff6ec4);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowMove 4s ease infinite;
+  font-weight: 700;
+}
+
+@keyframes rainbowMove {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+/* ===== Botões coloridos ===== */
+.btn-gradient {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  transition: transform 0.3s ease;
+}
+.btn-gradient:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+}
+
+/* ===== Galeria de imagens ===== */
+.gallery-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* ===== Animação das imagens ===== */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-img-container {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.gallery-img-container.delay-1 { animation-delay: 0.2s; }
+.gallery-img-container.delay-2 { animation-delay: 0.4s; }
+.gallery-img-container.delay-3 { animation-delay: 0.6s; }
+.gallery-img-container.delay-4 { animation-delay: 0.8s; }
+.gallery-img-container.delay-5 { animation-delay: 1s; }
+.gallery-img-container.delay-6 { animation-delay: 1.2s; }
+.gallery-img-container.delay-7 { animation-delay: 1.4s; }
+.gallery-img-container.delay-8 { animation-delay: 1.6s; }
+.gallery-img-container.delay-9 { animation-delay: 1.8s; }
+.gallery-img-container.delay-10 { animation-delay: 2s; }
